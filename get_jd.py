@@ -3,10 +3,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from lxml import etree
+from selenium.webdriver.chrome.options import Options
 import pymongo
 import time
 
-browser = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+browser = webdriver.Chrome(chrome_options=chrome_options)
 
 
 def jd_search():
